@@ -14,6 +14,8 @@ int main() {
     text_t text = "Hello, World!";
     number_t number = 10;
 
+    number++;
+
     std::cout << number << std::endl;
 
     return 0;
