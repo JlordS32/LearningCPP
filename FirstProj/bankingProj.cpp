@@ -20,8 +20,10 @@ double withdraw(double balance) {
 
         if (amount > balance) {
             std::cout << "Insufficient funds\n";
+        } else if (amount < 0) {
+            std::cout << "Invalid amount\n";
         }
-    } while (amount > balance);
+    } while (amount > balance || amount <= 0);
 
 
     return amount;
