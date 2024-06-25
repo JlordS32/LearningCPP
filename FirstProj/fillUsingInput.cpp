@@ -19,10 +19,16 @@ int main() {
 
     std::cout << "\nYou like the following food: \n" << std::endl;
 
-    for (std::string food : foods) {
-        if (!food.empty()) {
-            std::cout << food << std::endl;
-        }
+    // for (std::string food : foods) {
+    //     if (!food.empty()) {
+    //         std::cout << food << std::endl;
+    //     }
+    // }
+
+    // Using weird for loop
+
+    for (int i = 0; !foods[i].empty(); i++) {
+        std::cout << foods[i] << std::endl;
     }
 
     std::cout << std::endl;
