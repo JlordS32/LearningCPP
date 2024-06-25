@@ -2,18 +2,24 @@
 
 int main() {
 
+    // Null pointers initialisation
+    std::string *pName = nullptr;
+    int *pAge = nullptr;
+    std::string *pFreePizzaz = nullptr;
+
     std::string name = "Bro";
     int age = 21;
     std::string freePizzaz[5] = {"Cheese", "Peperoni", "Hawaiian", "Meat", "Veggie"};
 
-    std::string *pName = &name;
-    int *pAge = &age;
-    std::string *pFreePizzaz = freePizzaz;
+    pName = &name;
+    pAge = &age;
+    pFreePizzaz = freePizzaz;
 
-    std::cout << *pName << std::endl;
-    std::cout << *pAge << std::endl;
+    std::string y = *pName;
 
-    std::cout << pFreePizzaz[1] << std::endl;
+    std::cout << &y << std::endl;
+    std::cout << pName << std::endl;
+    std::cout << &name << std::endl;
 
     return 0;
 }
