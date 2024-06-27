@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 
 template <typename T, typename U>
 auto max(T x, U y) {
@@ -6,9 +7,10 @@ auto max(T x, U y) {
 }
 
 int main() {
-    auto maxValue = max(2, 2.1); // Automatically deduces the type
+    auto maxValue = max(2, 23);
 
     std::cout << maxValue << std::endl;
+    std::cout << typeid(maxValue).name() << std::endl;
 
     return 0;
 }
