@@ -71,7 +71,7 @@ void playerMove(char *spaces, char player) {
             spaces[number] = player;
         }
             
-    } while (number < 1 || number > 9);
+    } while (number < 0 || number > 9);
 }
 void computerMove(char *spaces, char player) {
     int number;
@@ -88,8 +88,9 @@ void computerMove(char *spaces, char player) {
     }
 }
 bool checkWinner(char *spaces, char player, char computer) {
-    char current = player;
-    for (int i = 0; i < 2; i++) {
+    char players[] = {player, computer};
+
+    for (char current : players) {
         if ((spaces[0] == current && spaces[1] == current && spaces[2] == current) ||
             (spaces[3] == current && spaces[4] == current && spaces[5] == current) ||
             (spaces[6] == current && spaces[7] == current && spaces[8] == current) ||
@@ -100,7 +101,6 @@ bool checkWinner(char *spaces, char player, char computer) {
             (spaces[2] == current && spaces[4] == current && spaces[6] == current)) {
             return true;
         }
-        current = computer;
     }
 
     if (checkTie(spaces)) {
