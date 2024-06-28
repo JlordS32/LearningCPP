@@ -1,1 +1,1 @@
-cout << luckyNumbers + 1 << endl;
+0
