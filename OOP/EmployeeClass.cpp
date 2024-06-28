@@ -9,7 +9,7 @@ class AbstractEmployee
 
 class Employee : AbstractEmployee
 {
-private:
+protected:
     string name;
     string company;
     int age;
@@ -52,7 +52,7 @@ public:
         this->age = age;
     }
 
-    void printDetails()
+    virtual void printDetails()
     {
         std::cout << "Name: " << this->name << std::endl;
         std::cout << "Company: " << this->company << std::endl;
@@ -67,20 +67,76 @@ public:
             std::cout << this->name << " sorry no promotion for you." << std::endl;
         }
     }
+
+    virtual void work() {
+        std::cout << this->name << " is working..." << std::endl;
+    }
+};
+
+class Manager : public Employee {
+    private:
+        string department;
+
+    public:
+        Manager(string name, string company, int age) : Employee(name, company, age) {
+            this->department = "NA";
+        }
+        Manager(string name, string company, int age, string department) : Employee(name, company, age) {
+            this->department = department;
+        }
+
+        string getDepartment()
+        {
+            return this->department;
+        }
+
+        void setDepartment(string department)
+        {
+            this->department = department;
+        }
+
+        void printDetails()
+        {
+            Employee::printDetails();
+            std::cout << "Department: " << this->department << std::endl;
+        }
+
+        void work() {
+            std::cout << this->name << " is currently managing his employees" << std::endl;
+        }
+};
+
+class Teacher : public Employee {
+    private:
+        string subject;
+
+    public:
+        Teacher(string name, string company, int age, string subject) : Employee(name, company, age) {
+            this->subject = subject;
+        }
+
+        void printDetails() {
+            Employee::printDetails();
+            std::cout << "Subject: " << this->subject << std::endl;
+        }
+
+        void work() {
+            std::cout << this->name << " is teaching " << this->subject << std::endl;
+        }
 };
 
 int main()
 {
-    Employee employee("John", "Google", 31);
+    Manager manager("Jane", "Facebook", 35, "Sales");
+    Teacher teacher("Jesus", "Google", 35, "Maths");
 
-    Employee *pEmployee = &employee;
+    Employee *employee1 = &manager;
+    Employee *employee2 = &teacher;
+    employee1->work();
+    employee2->work();
+    employee1->printDetails();
+    employee2->printDetails();
 
-    std::cout << pEmployee->getCompany() << std::endl;
-
-    employee.setCompany("Apple");
-
-    std::cout << pEmployee->getCompany() << std::endl;
-    pEmployee->askForPromotion();
 
     return 0;
 }
