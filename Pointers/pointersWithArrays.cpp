@@ -8,7 +8,7 @@ void getMinAndMax(int numbers[], int size, int *min, int *max);
 int main() {
 
     int numbers[5] = {-34, 43, 599, 33, 4};
-    int size = sizeof(numbers) / sizeof(numbers[0]);
+    int size = sizeof numbers / sizeof numbers[0];
     int min, max = numbers[0];
 
     getMinAndMax(numbers, size, &min, &max);
