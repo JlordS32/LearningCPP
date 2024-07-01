@@ -2,6 +2,10 @@
 
 using namespace std;
 
+void foo(int **value) {
+    value[0][1] = 70;
+}
+
 int main()
 {
     int someArray[][2] = {{1, 2}, {3, 4}};
@@ -15,6 +19,7 @@ int main()
     cout << "Second element of second sub-array: " << pArr[1] << endl;
 
     pArr[0][1] = 69;
+    foo(pArr);
 
     cout << someArray[0][1] << endl;
 

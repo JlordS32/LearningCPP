@@ -1,14 +1,20 @@
 #include <iostream>
-
 using namespace std;
 
-int main()
-{
-    int someArray[][2] = {{1, 2}, {3, 4}};
+int getNumber() {
 
-    int **pArr = new int *[2];
+    return 69;
+}
 
-    cout << pArr << endl;
+string getString() {
+
+    return "hello";
+}
+
+
+int main() {
+    cout << &getNumber << endl;
+    cout << &getString << endl;
 
     return 0;
 }
