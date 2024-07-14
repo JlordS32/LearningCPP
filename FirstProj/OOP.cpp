@@ -10,8 +10,8 @@ class Human {
             std::cout << name << " is eating" << std::endl;
         }
 };
-int main() {
 
+int main() {
     Human john;
     john.name = "John";
     john.job = "Programmer";

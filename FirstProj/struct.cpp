@@ -7,10 +7,18 @@ struct student
     float gpa;
 };
 
+struct Animal
+{
+    void (*speak)();
+};
+
 int main()
 {
     student student1 = {"Bro", 21, 3.5};
     student student2;
+    Animal dog = {[](){ std::cout << "Woof!" << std::endl; }};
+
+    dog.speak();
 
     student2.name = "Nerd";
     student2.age = 22;

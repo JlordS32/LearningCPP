@@ -19,16 +19,18 @@ int main()
 
     table[0][1] = 1;
 
-    cout << *(*(table + 0) + 0) << endl;
+    cout << *(*(table + 0) + 1) << endl;
 
     // Deleting double array pointers
 
-    for (int i = 0; i < rows; i++) {
+    for (int i = 0; i < rows; i++)
+    {
         delete[] table[i];
     }
     delete[] table;
 
-    if (table == nullptr) cout << "Table deleted";
+    if (table == nullptr)
+        cout << "Table deleted";
 
     return 0;
 }
