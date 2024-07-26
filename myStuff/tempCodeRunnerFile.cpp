@@ -30,7 +30,8 @@ int main() {
         }
     }
 
-    cout << (double)isSeven / (r * 3) * 100 << endl;
+    cout << isSeven << endl;
+    cout << (double)isSeven / r * 100 << endl;
 
     return 0;
 }

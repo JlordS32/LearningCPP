@@ -1,18 +1,13 @@
 #include <iostream>
+#include <cstdlib>
 
-int sum(int *x, int *y);
+using namespace std;
 
 int main() {
 
-    int x = 10;
-    int y = 5;
-    int z = sum(&x, &y);
+    srand(3242342323);
 
-    std::cout << z << std::endl;
+    cout << rand() % 100;
 
     return 0;
-}
-
-int sum(int *x, int *y) {
-    return *x + *y;
 }
